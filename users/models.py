@@ -6,43 +6,54 @@ class User(models.Model):
     uid = models.AutoField(primary_key=True)
     uname = models.CharField(max_length=264, blank=False)
     upassword = models.CharField(max_length=500, blank=False)
-    country = models.CharField(max_length=256, blank=False)
-    city = models.CharField(max_length=256, blank=False)
-    streetAddress = models.CharField(max_length=256, blank=False)
-    FName = models.CharField(max_length=256, blank=False)
-    LName = models.CharField(max_length=256, blank=False)
-    memberShip = models.CharField(max_length=25, blank=False)
-
-    def __str__(self):
-        return self.uname
+    ucountry = models.CharField(max_length=256, blank=False)
+    ucity = models.CharField(max_length=256, blank=False)
+    ustreetAddress = models.CharField(max_length=256, blank=False)
+    ufname = models.CharField(max_length=256, blank=False)
+    ulname = models.CharField(max_length=256, blank=False)
+    umembership = models.CharField(max_length=25, blank=False)
 
 
 class PaymentMethods(models.Model):
     userpayment = models.ForeignKey(User, on_delete=models.CASCADE)
-    payMethod = models.CharField(max_length=200, blank=True)
-
-    def __str__(self):
-        return self.user
+    paymethod = models.CharField(max_length=200, blank=True)
 
 
 class WebSites(models.Model):
     wid = models.AutoField(primary_key=True)
     wname = models.CharField(max_length=255, blank=False)
     wpath = models.CharField(max_length=255)
-    usersite = models.ForeignKey(User, on_delete=models.PROTECT)
-
-    def __str__(self):
-        return self.wname
+    USERSITE = models.ForeignKey(User, on_delete=models.PROTECT)
 
 
-class WebsiteOptions(models.Model)
-    siteoption = models.ForeignKey(WebSites, on_delete=models.CASCADE)
+class WebsiteOptions(models.Model):
+    SITEOPT = models.ForeignKey(WebSites, on_delete=models.CASCADE)
     option = models.CharField(max_length=255)
 
 
-class Pages(models.Model)
-    PID = models.AutoField(primary_key=True)
+class Pages(models.Model):
+    PID = models.AutoField(models.UniqueConstraint,primary_key=True)
     pname = models.CharField(max_length=255)
     ppath = models.CharField(max_length=500)
-    sitepage = models.ForeignKey(WebSites, on_delete=models.PROTECT)
-   
+    SITEPAGE = models.ForeignKey(WebSites, on_delete=models.PROTECT)
+
+
+class Elements(models.Model):
+    eid = models.CharField(models.UniqueConstraint, max_length=100, primary_key=True)
+    PPATH = models.ForeignKey(Pages, on_delete=models.PROTECT)
+    index = models.IntegerField()
+
+
+class ElementOfElement:
+    PARENT = models.ForeignKey(Elements, on_delete=models.PROTECT)
+    CHILD = models.ForeignKey(Elements, on_delete=models.PROTECT)
+
+
+class ElementClasses:
+    CLASSELEMENT = models.ForeignKey(Elements, on_delete=models.PROTECT)
+    classes = models.CharField(max_length=500)
+
+
+class ElementAttributes:
+    ATTRIELEMENT = models.ForeignKey(Elements, on_delete=models.PROTECT)
+    attributes = models.CharField(max_length=500)
