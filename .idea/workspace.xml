@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71d81d63-c5ac-4f35-8e46-7fceec436147" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/readme to deploy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/readme to deploy.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +97,8 @@
       <updated>1579863857792</updated>
       <workItem from="1579863870482" duration="2229000" />
       <workItem from="1579866151709" duration="1614000" />
-      <workItem from="1579868777683" duration="850000" />
+      <workItem from="1579868777683" duration="5306000" />
+      <workItem from="1579874128905" duration="10000" />
     </task>
     <servers />
   </component>
@@ -104,9 +106,13 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1579868782544">
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1579874128568">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1579868782544" />
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1579874128568" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1579871877289">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1579871877289" />
   </component>
 </project>
