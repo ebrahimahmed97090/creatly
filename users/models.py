@@ -11,7 +11,7 @@ class User(models.Model):
     ustreetAddress = models.CharField(max_length=256, blank=False)
     ufname = models.CharField(max_length=256, blank=False)
     ulname = models.CharField(max_length=256, blank=False)
-    umembership = models.CharField(max_length=25, blank=False)
+    umembership = models.CharField(max_length=225, blank=False)
 
 
 class PaymentMethods(models.Model):
@@ -32,7 +32,7 @@ class WebsiteOptions(models.Model):
 
 
 class Pages(models.Model):
-    PID = models.AutoField(models.UniqueConstraint,primary_key=True)
+    PID = models.AutoField(models.UniqueConstraint, primary_key=True)
     pname = models.CharField(max_length=255)
     ppath = models.CharField(max_length=500)
     SITEPAGE = models.ForeignKey(WebSites, on_delete=models.PROTECT)
@@ -44,16 +44,11 @@ class Elements(models.Model):
     index = models.IntegerField()
 
 
-class ElementOfElement:
-    PARENT = models.ForeignKey(Elements, on_delete=models.PROTECT)
-    CHILD = models.ForeignKey(Elements, on_delete=models.PROTECT)
-
-
-class ElementClasses:
+class ElementClasses(models.Model):
     CLASSELEMENT = models.ForeignKey(Elements, on_delete=models.PROTECT)
     classes = models.CharField(max_length=500)
 
 
-class ElementAttributes:
+class ElementAttributes(models.Model):
     ATTRIELEMENT = models.ForeignKey(Elements, on_delete=models.PROTECT)
     attributes = models.CharField(max_length=500)

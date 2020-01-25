@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from users.models import User
 
 
 # Create your views here.
@@ -21,8 +22,9 @@ def about(request):
 
 
 def home(request):
-    my_dict = {'insert_me': "Hello I am from views.py"}
-    return render(request, 'home.html', context=my_dict)
+    users_list = User.objects.order_by('uid')
+    users_dict = {'access_records': users_list}
+    return render(request, 'home.html', context=users_dict)
 
 
 def services(request):

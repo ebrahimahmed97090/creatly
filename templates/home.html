@@ -6,6 +6,15 @@
     <title>Home</title>
 </head>
 <body>
+{% if access_records %}
 
+{% for acc in access_records %}
+
+    {{acc.uname}}
+   {{ acc.uid}}
+{% endfor %}
+{% else %}
+{% endif %}
+<p>no user</p>
 </body>
 </html>
