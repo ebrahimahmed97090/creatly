@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from users.models import User
+from . import forms
 
 
 # Create your views here.
@@ -33,8 +34,18 @@ def services(request):
 
 
 def registration(request):
-    my_dict = {'insert_me': "Hello I am from views.py"}
-    return render(request, 'registration.html', context=my_dict)
+    form = forms.FormName()
+    if request.method == 'POST':
+        form = forms.FormName(request.POST)
+
+        if form.is_valid():
+            print("form validation success.Prints in console")
+            print("Name" + form.cleaned_data['name'])
+            print("Email" + form.cleaned_data['email'])
+            print("Text" + form.cleaned_data['text'])
+        return render(request, 'registration.html', {'form': form})
+
+    return render(request, 'registration.html', {'form': form})
 
 
 def example(request):
