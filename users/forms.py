@@ -1,7 +1,9 @@
 from django import forms
+from users.models import User
+from django.core import validators
 
 
-class FormName(forms.Form):
-    name = forms.CharField()
-    email = forms.EmailField()
-    text = forms.CharField(widget=forms.Textarea)
+class NewUserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = '__all__'

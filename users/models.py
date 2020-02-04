@@ -11,6 +11,7 @@ class User(models.Model):
     ustreetAddress = models.CharField(max_length=256, blank=False)
     ufname = models.CharField(max_length=256, blank=False)
     ulname = models.CharField(max_length=256, blank=False)
+    umail = models.CharField(max_length=255, null=True)
     umembership = models.CharField(max_length=225, blank=False)
 
 

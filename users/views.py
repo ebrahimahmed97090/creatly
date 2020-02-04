@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from users.models import User
-from . import forms
+#from . import forms
+from users.forms import NewUserForm
 
 
 # Create your views here.
@@ -34,16 +35,15 @@ def services(request):
 
 
 def registration(request):
-    form = forms.FormName()
-    if request.method == 'POST':
-        form = forms.FormName(request.POST)
 
+    form = NewUserForm()
+    if request.method == 'POST':
+        form = NewUserForm(request.POST)
         if form.is_valid():
-            print("form validation success.Prints in console")
-            print("Name" + form.cleaned_data['name'])
-            print("Email" + form.cleaned_data['email'])
-            print("Text" + form.cleaned_data['text'])
-        return render(request, 'registration.html', {'form': form})
+            form.save(commit=True)
+            return home(request)
+        else:
+            print("error form invalid")
 
     return render(request, 'registration.html', {'form': form})
 
