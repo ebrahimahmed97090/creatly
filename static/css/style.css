@@ -1,0 +1,226 @@
+/* FontAwesome for working BootSnippet :> */
+/*slider*/
+body {
+  font-family: tahoma;
+
+}
+.demo{
+    background-image: url(https://s3.ca-central-1.amazonaws.com/image-web-frankie/BackgroundBlue.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.testimonial {
+  background-color: white;
+  text-align: center;
+  padding: 30px 30px 50px;
+  margin: 100px 15px 160px;
+  position: relative;
+}
+
+.testimonial::before,
+.testimonial::after {
+  content: "";
+  border-top: 40px solid white;
+  border-right: 125px solid transparent;
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+}
+
+.testimonial::after {
+  border-right: none;
+  border-left: 125px solid transparent;
+  left: auto;
+  right: 0;
+}
+
+.testimonial .icon {
+  display: inline-block;
+  font-size: 80px;
+  color: #016d9b;
+  margin-bottom: 20px;
+  opacity: 0.6;
+}
+
+.testimonial .description {
+  font-size: 14px;
+  color: #777;
+  text-align: justify;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.testimonial .testimonial-content {
+  width: 100%;
+  left: 0;
+  position: absolute;
+}
+
+.testimonial .pic {
+  display: inline-block;
+  border: 4px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 4px #016d9b;
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+}
+
+.testimonial .pic img {
+  width: 100%;
+  height: auto;
+}
+
+.testimonial .name {
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  text-transform: capitalize;
+  margin: 10px 0 5px 0;
+}
+
+.testimonial .title {
+  display: block;
+  font-size: 14px;
+  color: #ffd9b8;
+}
+
+.owl-controls {
+  margin-top: 20px;
+}
+
+.owl-pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.owl-page {
+  height: 10px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10%;
+}
+
+.owl-page:hover,
+.owl-page.active {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.owl-page:not(first-item) {
+  margin-left: 10px;
+}
+/**/
+/*footer*/
+.footer-bs {
+    background-color: #3699fb;
+    padding: 60px 40px;
+    color: rgba(255, 255, 255, 1.00);
+
+    border-bottom-right-radius: 6px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 6px;
+}
+
+.footer-bs .footer-brand, .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns {
+    padding: 10px 25px;
+}
+
+.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns {
+    border-color: transparent;
+}
+
+.footer-bs .footer-brand h2 {
+    margin: 0px 0px 10px;
+}
+
+.footer-bs .footer-brand p {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.70);
+}
+
+.footer-bs .footer-nav ul.pages {
+    list-style: none;
+    padding: 0px;
+}
+
+.footer-bs .footer-nav ul.pages li {
+    padding: 5px 0px;
+}
+
+.footer-bs .footer-nav ul.pages a {
+    color: rgba(255, 255, 255, 1.00);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.footer-bs .footer-nav ul.pages a:hover {
+    color: rgba(255, 255, 255, 0.80);
+    text-decoration: none;
+}
+
+.footer-bs .footer-nav h4 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.footer-bs .footer-nav ul.list {
+    list-style: none;
+    padding: 0px;
+}
+
+.footer-bs .footer-nav ul.list li {
+    padding: 5px 0px;
+}
+
+.footer-bs .footer-nav ul.list a {
+    color: rgba(255, 255, 255, 0.80);
+}
+
+.footer-bs .footer-nav ul.list a:hover {
+    color: rgba(255, 255, 255, 0.60);
+    text-decoration: none;
+}
+
+.footer-bs .footer-social ul {
+    list-style: none;
+    padding: 0px;
+}
+
+.footer-bs .footer-social h4 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.footer-bs .footer-social li {
+    padding: 5px 4px;
+}
+
+.footer-bs .footer-social a {
+    color: rgba(255, 255, 255, 1.00);
+}
+
+.footer-bs .footer-social a:hover {
+    color: rgba(255, 255, 255, 0.80);
+    text-decoration: none;
+}
+
+.footer-bs .footer-ns h4 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.footer-bs .footer-ns p {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.70);
+}
+
+@media (min-width: 768px) {
+    .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns {
+        border-left: solid 1px rgba(255, 255, 255, 0.10);
+    }
+}
