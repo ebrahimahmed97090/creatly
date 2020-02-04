@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71d81d63-c5ac-4f35-8e46-7fceec436147" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/users/migrations/0003_auto_20200204_0659.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/~WRL0891.tmp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django.docx" beforeDir="false" afterPath="$PROJECT_DIR$/django.docx" afterDir="false" />
@@ -164,7 +166,7 @@
       <workItem from="1580760317581" duration="699000" />
       <workItem from="1580761049826" duration="98000" />
       <workItem from="1580761209141" duration="6582000" />
-      <workItem from="1580775278608" duration="16589000" />
+      <workItem from="1580775278608" duration="17025000" />
     </task>
     <servers />
   </component>
