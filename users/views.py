@@ -68,6 +68,13 @@ def example(request):
     my_dict = {'insert_me': "Hello I am from views.py"}
     return render(request, 'examples.html', context=my_dict)
 
+def example(request):
+    my_dict = {'insert_me': "Hello I am from views.py"}
+    return render(request, 'examples.html', context=my_dict)
+
+def UWl(request):
+    my_dict = {'insert_me': "Hello I am from views.py"}
+    return render(request, 'User_Wlist.html', context=my_dict)
 
 def usershome(request):
     my_dict = {'insert_me': "Hello I am from views.py"}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Website Name</th>
+      <th scope="col">VIEWS</th>
+      <th scope="col">SALES</th>
+      <th scope="col">TOTAL</th>
+      <th scope="col">...</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Web1</th>
+      <td>455556</td>
+      <td>123584</td>
+      <td>0.25</td>
+      <button onclick="remove_update(event)">Remove</button>
+    </tr>
+    <tr>
+      <th scope="row">Web2</th>
+      <td>4556548</td>
+      <td>454645</td>
+      <td>445588</td>
+    </tr>
+    <tr>
+      <th scope="row">Web3</th>
+      <td>444788</td>
+      <td>455456</td>
+      <td>4455</td>
+    </tr>
+  </tbody>
+</table>
+
+{% endblock %}
