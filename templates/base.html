@@ -10,26 +10,53 @@
     <link rel="stylesheet" href="{% static 'fontawesome-pro-5.11.2-web/css/all.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+{#H: Add style for Creatly logo #}
+<style>
+ .navbar-brand {
+  font: 40px Freestyle Script, sans-serif;
+     text-decoration-color: #ffffff;
+}
+</style>
 </head>
 <body>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+{#H: Update background color for navbar #}
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #2699FB;">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
             aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href="#">Hidden brand</a>
+{#H: Update background color for navbar, Add main bottons from design #}
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01" style="background-color: #2699FB;">
+        <a class="navbar-brand" href="#">Creatly</a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">HOME<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">ABOUT<span class="sr-only">(current)</span></a>
+            </li><li class="nav-item active">
+                <a class="nav-link" href="#">SERVICES<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">EXAMPLES<span class="sr-only">(current)</span></a>
             </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">CONTACT<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">JOIN US<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">PRICE PLANS<span class="sr-only">(current)</span></a>
+            </li>
+
+{#            <li class="nav-item">#}
+{#                <a class="nav-link" href="#">Link</a>#}
+{#            </li>#}
+{#            <li class="nav-item">#}
+{#                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>#}
+{#            </li>#}
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -46,34 +73,36 @@
 <footer class="footer-bs">
     <div class="row">
         <div class="col-md-3 footer-brand animated fadeInLeft">
-            <h2>Logo</h2>
+            <h2 class="navbar-brand">Creatly</h2>
             <p>Suspendisse hendrerit tellus laoreet luctus pharetra. Aliquam porttitor vitae orci nec ultricies.
                 Curabitur vehicula, libero eget faucibus faucibus, purus erat eleifend enim, porta pellentesque ex
                 mi ut
                 sem.</p>
-            <p>© 2014 BS3 UI Kit, All rights reserved</p>
+            <p>© 2020 BS3 UI Kit, All rights reserved</p>
         </div>
-        <div class="col-md-4 footer-nav animated fadeInUp">
-            <h4>Menu —</h4>
+        <div class="col-md-3 footer-nav animated fadeInUp">
+{#            <h4>Menu —</h4>#}
             <div class="col-md-6">
                 <ul class="pages">
-                    <li><a href="#">Travel</a></li>
-                    <li><a href="#">Nature</a></li>
-                    <li><a href="#">Explores</a></li>
-                    <li><a href="#">Science</a></li>
-                    <li><a href="#">Advice</a></li>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">SERVICES</a></li>
+                    <li><a href="#">EXAMPLES</a></li>
+                    <li><a href="#">PRICE PLANS</a></li>
+                    <li><a href="#">JOIN US</a></li>
                 </ul>
             </div>
+        </div>
+        <div class="col-md-3 footer-nav animated fadeInUp">
             <div class="col-md-6">
                 <ul class="list">
                     <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#">Contact</a></li>
                     <li><a href="#">Terms & Condition</a></li>
                     <li><a href="#">Privacy Policy</a></li>
                 </ul>
             </div>
         </div>
-        <div class="col-md-2 footer-social animated fadeInDown">
+        <div class="col-md-3 footer-social animated fadeInDown">
             <h4>Follow Us</h4>
             <ul>
                 <li><a href="#">Facebook</a></li>
