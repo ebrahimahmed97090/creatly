@@ -30,5 +30,5 @@ urlpatterns = [
     url(r'^example/', views.example, name='example'),
     url(r'^Uwl/', views.UWl, name='User_Wlist'),
     url(r'^users/', include('users.urls')),
-    url(r'^/', include('users.urls'))
+
 ]

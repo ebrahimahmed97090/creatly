@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from users.models import User
-#from . import forms
-from users.forms import NewUserForm
+# from . import forms
+from users.forms import NewUserForm, NewUserInfoForm
 
 
 # Create your views here.
@@ -35,17 +35,33 @@ def services(request):
 
 
 def registration(request):
+    registered = False
+    if request.method == "POST":
+        userform = NewUserForm(data=request.POST)
+        userinfo = NewUserInfoForm(data=request.POST)
 
-    form = NewUserForm()
-    if request.method == 'POST':
-        form = NewUserForm(request.POST)
-        if form.is_valid():
-            form.save(commit=True)
-            return home(request)
+        if userform.is_valid() and userinfo.is_valid():
+            user = userform.save()
+            user.set_password(user.password)
+            user.save()
+
+            profile = userinfo.save(commit=False)
+            profile.user = user
+            if 'profile_pic' in request.FILES:
+                profile.profile_pic = request.FILES['profile_pic']
+
+            profile.save()
+
+            registered = True
+
         else:
-            print("error form invalid")
+            print(userform.errors, userinfo.errors)
 
-    return render(request, 'registration.html', {'form': form})
+    else:
+        userform = NewUserForm()
+        userinfo = NewUserInfoForm()
+
+    return render(request, 'registration.html', {'userform': userform, 'userinfo': userinfo, 'registered':registered})
 
 
 def example(request):
@@ -59,3 +75,7 @@ def example(request):
 def UWl(request):
     my_dict = {'insert_me': "Hello I am from views.py"}
     return render(request, 'User_Wlist.html', context=my_dict)
+
+def usershome(request):
+    my_dict = {'insert_me': "Hello I am from views.py"}
+    return render(request, 'usershome.html', context=my_dict)
