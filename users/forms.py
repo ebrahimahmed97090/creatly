@@ -10,10 +10,10 @@ class NewUserForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = '__all__'
+        fields = ('first_name', 'last_name', 'email', 'password')
 
 
 class NewUserInfoForm(forms.ModelForm):
     class Meta:
         model = UserProfileInfo
-        fields = '__all__'
+        fields = ('profile_site', 'profile_pic', 'ucountry','ucity','ustreetAddress','umembership')

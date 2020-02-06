@@ -1,16 +1,19 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django_countries.fields import CountryField
+
 
 
 # Create your models here.
 class UserProfileInfo(models.Model):
+    MEMBER_CHOICES = (('free', 'Free'), ('minimal', 'Minimal'), ('premium', 'Premium'))
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     profile_site = models.URLField(blank=True)
     profile_pic = models.ImageField(upload_to='profile_pics', blank=True)
-    ucountry = models.CharField(max_length=256, blank=False)
+    ucountry = CountryField()
     ucity = models.CharField(max_length=256, blank=False)
     ustreetAddress = models.CharField(max_length=256, blank=False)
-    umembership = models.CharField(max_length=225, blank=False)
+    umembership = models.CharField(max_length=225, choices=MEMBER_CHOICES)
 
     def __str__(self):
         return self.user.username

@@ -15,23 +15,22 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 {#H: Add style for Creatly logo #}
-<style>
- .navbar-brand {
-  font: 40px Freestyle Script, sans-serif;
-     text-decoration-color: #ffffff;
-}
-</style>
+<!--don't override framework class create a new one and add it to css file in case that you wanted to add another navbar-brand some
+    where else
+    -->
+
 </head>
 <body>
 {#H: Update background color for navbar #}
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #2699FB;">
+<!--don't use inline styling because it will override any styling to this element in the future external file is preferred the problem in nav background color were that nav has taken bg-light class that gives it a background -->
+<nav class="navbar navbar-expand-lg navbar-light  nav-bar-style" >
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
             aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 {#H: Update background color for navbar, Add main bottons from design #}
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01" style="background-color: #2699FB;">
-        <a class="navbar-brand" href="#">Creatly</a>
+    <div class="collapse navbar-collapse nav-nav" id="navbarTogglerDemo01" >
+        <a class="navbar-brand navbar-brand-home-style" href="#">Creatly</a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
                 <a class="nav-link" href="{% url 'home'%}">HOME<span class="sr-only">(current)</span></a>
@@ -54,12 +53,7 @@
                 <a class="nav-link" href="{% url 'prices'%}">PRICE PLANS<span class="sr-only">(current)</span></a>
             </li>
 
-{#            <li class="nav-item">#}
-{#                <a class="nav-link" href="#">Link</a>#}
-{#            </li>#}
-{#            <li class="nav-item">#}
-{#                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>#}
-{#            </li>#}
+
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
