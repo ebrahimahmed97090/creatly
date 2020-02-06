@@ -29,5 +29,5 @@ urlpatterns = [
     url(r'^reg/', views.registration, name='reg'),
     url(r'^example/', views.example, name='example'),
     url(r'^users/', include('users.urls')),
-    url(r'^/', include('users.urls'))
+
 ]

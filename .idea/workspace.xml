@@ -2,14 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71d81d63-c5ac-4f35-8e46-7fceec436147" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/users/migrations/0003_auto_20200204_0659.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/~WRL0891.tmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docs/django.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/style.uni-form.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/uni-form.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/uni-form-validation.jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/uni-form.jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/validators.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/usershome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Creatly.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Creatly.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Creatly/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Creatly/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Creatly/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Creatly/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docs/readme to deploy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/readme to deploy.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django.docx" beforeDir="false" afterPath="$PROJECT_DIR$/django.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,23 +77,26 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/js" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Anaconda3/envs/myenv" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Python\Creatly\static\css" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Python\Creatly\static\js" />
       <recent name="D:\Python\Creatly\static" />
       <recent name="D:\Python\Creatly\templates" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.manage">
+  <component name="RunManager" selected="Django server.Creatly">
     <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Creatly" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -110,6 +125,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="Creatly.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -167,6 +183,12 @@
       <workItem from="1580761049826" duration="98000" />
       <workItem from="1580761209141" duration="6582000" />
       <workItem from="1580775278608" duration="17025000" />
+      <workItem from="1580804465107" duration="805000" />
+      <workItem from="1580824170875" duration="1224000" />
+      <workItem from="1580825433516" duration="28000" />
+      <workItem from="1580825933371" duration="7000" />
+      <workItem from="1580949353076" duration="11132000" />
+      <workItem from="1580967163528" duration="6524000" />
     </task>
     <servers />
   </component>
@@ -174,43 +196,63 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="462" y="107" key="FileChooserDialogImpl" timestamp="1580084223783">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580960746161">
+      <screen x="0" y="0" width="1366" height="736" />
+    </state>
+    <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.736@0.0.1366.736" timestamp="1580960746161" />
+    <state x="665" y="219" key="FileChooserDialogImpl" timestamp="1580965333315">
+      <screen x="0" y="0" width="1366" height="736" />
     </state>
     <state x="462" y="107" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1580084223783" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1579911565577">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="665" y="219" key="FileChooserDialogImpl/0.0.1366.736@0.0.1366.736" timestamp="1580965333315" />
+    <state width="1323" height="181" key="GridCell.Tab.0.bottom" timestamp="1581009742412">
+      <screen x="0" y="0" width="1366" height="736" />
     </state>
     <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1579911565577" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1579911565577">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1323" height="181" key="GridCell.Tab.0.bottom/0.0.1366.736@0.0.1366.736" timestamp="1581009742412" />
+    <state width="1323" height="181" key="GridCell.Tab.0.center" timestamp="1581009742411">
+      <screen x="0" y="0" width="1366" height="736" />
     </state>
     <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1579911565577" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1579911565577">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1323" height="181" key="GridCell.Tab.0.center/0.0.1366.736@0.0.1366.736" timestamp="1581009742411" />
+    <state width="1323" height="181" key="GridCell.Tab.0.left" timestamp="1581009742410">
+      <screen x="0" y="0" width="1366" height="736" />
     </state>
     <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1579911565577" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1579911565577">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1323" height="181" key="GridCell.Tab.0.left/0.0.1366.736@0.0.1366.736" timestamp="1581009742410" />
+    <state width="1323" height="181" key="GridCell.Tab.0.right" timestamp="1581009742412">
+      <screen x="0" y="0" width="1366" height="736" />
     </state>
     <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1579911565577" />
+    <state width="1323" height="181" key="GridCell.Tab.0.right/0.0.1366.736@0.0.1366.736" timestamp="1581009742412" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1579912515107">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1366.728@0.0.1366.728" timestamp="1579912515107" />
-    <state x="184" y="11" key="SettingsEditor" timestamp="1580788574023">
+    <state x="184" y="11" key="SettingsEditor" timestamp="1580965340476">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
-    <state x="184" y="11" key="SettingsEditor/0.0.1366.736@0.0.1366.736" timestamp="1580788574023" />
-    <state x="379" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1580775279789">
+    <state x="184" y="11" key="SettingsEditor/0.0.1366.736@0.0.1366.736" timestamp="1580965340476" />
+    <state x="379" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1581009732185">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
     <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1580084195884" />
-    <state x="379" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.736@0.0.1366.736" timestamp="1580775279789" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1579913986373">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="379" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.736@0.0.1366.736" timestamp="1581009732185" />
+    <state x="346" y="50" width="672" height="686" key="search.everywhere.popup" timestamp="1580967890132">
+      <screen x="0" y="0" width="1366" height="736" />
     </state>
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1579913986373" />
+    <state x="346" y="50" width="672" height="686" key="search.everywhere.popup/0.0.1366.736@0.0.1366.736" timestamp="1580967890132" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/Anaconda3/envs/myenv/Lib/site-packages/django/template/backends/django.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Creatly$manage.coverage" NAME="manage Coverage Results" MODIFIED="1579911535549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
