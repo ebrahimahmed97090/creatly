@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71d81d63-c5ac-4f35-8e46-7fceec436147" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/images/11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/443.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/[Originals]/11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/[Originals]/12.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/kaka.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/User_Wlist.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/Carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/Carousel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Creatly/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Creatly/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -173,7 +168,7 @@
       <workItem from="1580775278608" duration="17025000" />
       <workItem from="1580913288262" duration="2163000" />
       <workItem from="1580917776875" duration="316000" />
-      <workItem from="1580918120425" duration="11773000" />
+      <workItem from="1580918120425" duration="15176000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1580947548759</created>
