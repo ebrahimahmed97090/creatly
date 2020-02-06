@@ -1,9 +1,9 @@
 from django.contrib import admin
-from users.models import User, PaymentMethods, WebSites, WebsiteOptions, Pages, Elements, ElementAttributes, \
+from users.models import UserProfileInfo, PaymentMethods, WebSites, WebsiteOptions, Pages, Elements, ElementAttributes, \
     ElementClasses
 
 # Register your models here.
-admin.site.register(User)
+admin.site.register(UserProfileInfo)
 admin.site.register(PaymentMethods)
 admin.site.register(WebSites)
 admin.site.register(WebsiteOptions)

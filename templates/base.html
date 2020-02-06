@@ -6,9 +6,12 @@
     <title> {% block title %}
 
     {% endblock %}</title>
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'fontawesome-pro-5.11.2-web/css/all.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.uni-form.css' %}">
+    <link rel="stylesheet" href="{% static 'css/uni-form.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 {#H: Add style for Creatly logo #}
@@ -31,24 +34,24 @@
         <a class="navbar-brand" href="#">Creatly</a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-                <a class="nav-link" href="#">HOME<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{% url 'home'%}">HOME<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">ABOUT<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{% url 'about'%}">ABOUT<span class="sr-only">(current)</span></a>
             </li><li class="nav-item active">
-                <a class="nav-link" href="#">SERVICES<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{% url 'services' %}">SERVICES<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">EXAMPLES<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{% url 'example'%}">EXAMPLES<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">CONTACT<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{% url 'contact'%}">CONTACT<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">JOIN US<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{% url 'reg' %}">JOIN US<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">PRICE PLANS<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{% url 'prices'%}">PRICE PLANS<span class="sr-only">(current)</span></a>
             </li>
 
 {#            <li class="nav-item">#}
@@ -132,6 +135,9 @@
 <script src="{% static 'fontawesome-pro-5.11.2-web/js/all.min.js' %}"></script>
 <script src="{% static 'js/app.js' %}"></script>
 <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/uni-form.jquery.js' %}"></script>
+<script src="{% static 'js/uni-form-validation.jquery.js' %}"></script>
+<script src="{% static 'js/validators.js' %}"></script>
 
 </body>
 </html>

@@ -1,0 +1,433 @@
+# ------------------------Deals with envs----------------------------------------------------
+"""Pycharm creates enviroment and project without any command line if you created a project from it
+list of virtual env:conda env list
+create env conda create –name myenv django
+to activate env: coda activate myenv
+to deactivate: deactivate
+to remove env : conda remove --name myenv --all
+to more options :https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
+------------------------Run server---------------------------------------------------------
+run django server : python manage.py runserver
+-----------------------Create application--------------------------------------------------
+to create application: python manage.py startapp first_app
+
+and go to django project settings.py and add your app name to INSTALLED_APPS array as array
+-------------------------add a view-------------------------------------------------------
+to add a view : go to view file in app folder and
+"""
+from django.http import HttpResponse
+
+
+def index(request):
+    return HttpResponse("Hello World!")
+
+
+"""
+so now you added a view and you need to map it into your urls
+---------------------------project urls-------------------------------------------------------
+go to urls.py in project folder
+"""
+from django.conf.urls import url
+from yourappname import views
+
+"""r for regex $ for start string $ for end string thats means the only server url will redirect to index method
+and add url(r'^$', views.index, name='index') to urlpatterns list
+"""
+"""------------------------------app urls------------------------------------------------------
+first we need to go to urls of project and"""
+from django.conf.urls import include
+
+# and add
+url(r'^first_app/', include('first_app.urls'))
+to
+url
+patterns
+
+# and go to first app folder and add urls.py file
+
+from django.conf.urls import url
+from yourappname import views
+
+# and create a list
+urlpatterns = [
+
+    url(r'^$', views.index, name='index'),
+
+]
+# now if you added new url to here it will be serverurl/first_app/whateveryouadd
+
+-----------------------Templates - ---------------------
+"""to create template
+if you have created project with pycharm don't do until next //
+create templates folder in project if not created
+go to settings.py in project root and after BASE_DIR
+"""
+TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
+"""
+and search to TEMPLATES dictionary and add TEMPLATE_DIR to DIR list (usually pycharm adds it)
+//
+
+Finally, we are going to add our first actual template create inside templates folder
+Index.html
+And go to views.py of your app to attach it to your app
+We'll edit our function
+"""
+
+
+def index(request):
+    return HttpResponse("<h1>Hello world!</h1>")
+
+
+# to
+def index(request):
+    my_dict = {'insert_me': "Hello I am from views.py"}
+    return render(request, 'index.html', context=my_dict)
+
+
+"""
+and to print insert_me go to index.html and write your template variable as {{insert_me}} any where
+then run your server
+take care don't forget to runserver from the project root folder
+so to make your project more modular create folder inside template folder named with related app
+
+------------------------------------------------static files----------------------------------------
+
+How to insert static media, js or css files
+Create new dir inside a project called static
+And then will add the dir to settings.py file in STATIC_URL
+Like
+"""
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    STATIC_DIR,
+]
+
+"""And you need to write
+{% load staticfiles %}
+In top of html template
+Your new source will be {%static "images/pic.jpg"%}
+So now you can access your image by http://127.0.0.1:8000/static/images/image.png
+And you can do that to your css or js or any files
+
+------------------------------------------------------------------models-------------------------------------------------------
+Go to
+model.py in application
+create your table name class and inherit it from models.Model
+"""
+
+
+class User(models.Model):
+    uid = models.AutoField(primary_key=True)
+    uname = models.CharField(max_length=264, blank=False)
+    upassword = models.CharField(max_length=500, blank=False)
+    ucountry = models.CharField(max_length=256, blank=False)
+    ucity = models.CharField(max_length=256, blank=False)
+    ustreetAddress = models.CharField(max_length=256, blank=False)
+    ufname = models.CharField(max_length=256, blank=False)
+    ulname = models.CharField(max_length=256, blank=False)
+    umembership = models.CharField(max_length=25, blank=False)
+
+
+"""
+after finishing your classes
+python manage.py migrate
+python manage.py makemigrations appname
+
+python manage.py migrate
+
+from app admin.py register your models
+"""
+from users.models import User
+
+admin.site.register(User)
+"""
+to use database admin you need to
+-------------------------------------create super user-------------------------------
+Python manage.py createsuperuser
+Go to
+http://127.0.0.1:8000/admin/
+------------------------------------------filling your database with dummy---------------------------------------------------
+Install Faker library
+Pip install  Faker"""
+import os
+import django
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Creatly.settings')
+
+django.setup()
+
+from faker import Faker
+from users.models import User
+
+fakegen = Faker()
+
+
+def add_user(N=5):
+    for entry in range(N):
+        fake_uname = fakegen.name()
+        fake_upassword = fakegen.name()
+        fake_ucountry = fakegen.name()
+        fake_ucity = fakegen.name()
+        fake_ustreetAddress = fakegen.name()
+        fake_fname = fakegen.name()
+        fake_lname = fakegen.name()
+        fake_umembership = fakegen.name()
+
+        usr = User.objects.get_or_create(uname=fake_uname, upassword=fake_upassword, ucountry=fake_ucountry,
+                                         ucity=fake_ucity, ustreetAddress=fake_ustreetAddress, ufname=fake_fname,
+                                         ulname=fake_lname, umembership=fake_umembership)[0]
+
+
+if __name__ == '__main__':
+    print('populating script')
+    add_user(20)
+    print("Populating Complete!")
+"""
+-----------------------------------------------------------inject database to front end - ---------------------------------------
+In
+views.py
+"""
+from users.models import Tablename
+
+
+# and inside a view function
+
+
+def home(request):
+    users_list = Tablename.objects.order_by('uid')
+    users_dict = {'access_records': users_list}
+    return render(request, 'home.html', context=users_dict)
+
+
+"""
+------------------------------------------------forms - -----------------------------------------
+Create
+forms.py
+file in application
+"""
+from django import forms
+
+
+class FormName(forms.Form):
+    name = forms.CharField()
+    email = forms.EmailField()
+    text = forms.CharField(widget=forms.Textarea)
+
+
+"""
+we need to show it using a view
+.means current dir so inside view.py file
+"""
+from . import forms
+
+"""
+// after that we'll create a view
+
+"""
+
+
+def registration(request):
+    form = forms.FormName()
+    return render(request, 'registration.html', {'form': form})
+
+
+"""
+and we'll add the view to url.py
+"""
+url(r'^reg/', views.registration, name='reg')
+"""
+form validation inside view
+"""
+if request.method == 'POST':
+    form = forms.FormName(request.POST)
+
+    if form.is_valid():
+    # Do nothing
+    print("form validation success.Prints in console")
+    print("Name" + form.cleaned_data['name'])
+    print("Name" + form.cleaned_data['email'])
+    print("Name" + form.cleaned_data['text'])
+    return render(request, 'registration.html', {'form': form})
+
+    ------------------------check
+""" for bots - -----------------
+Add thins to form class
+
+
+"""
+
+botcatcher = forms.CharField(required=False,
+                             widget=forms.HiddenInput)
+
+
+def clean_botcatcher(self):
+    botcatcher = self.cleaned_data['botcatcher']
+    if len(botcatcher) > 0:
+        raise forms.ValidationError("Bte3mel eh hena yabnel teeeeeeeeet")
+
+
+# or you can
+from django.core import validators
+
+botcatcher = forms.CharField(required=False,
+                             widget=forms.HiddenInput,
+                             validators=[validators.MaxLengthValidator(0)])
+
+
+# and you can add your own validation function
+
+
+def check_for_z(value):
+    if value[0].lower() != 'z':
+        raise forms.ValidationError("NAME NEEDS TO START WITH Z")
+
+        # IN FORM CLASS
+        name = forms.CharField(validators=[check_for_z])
+
+        # custom validators
+
+
+class FormName(forms.Form):
+    username = forms.CharField()
+    useremail = forms.EmailField()
+    verimail = forms.EmailField(label="Enter your email again:")
+    text = forms.CharField(widget=forms.Textarea)
+    botcatcher = forms.CharField(required=False,
+                                 widget=forms.HiddenInput,
+                                 validators=[validators.MaxLengthValidator(0)])
+
+
+def clean(self):
+    all_clean_data = super(FormName, self).clean()
+    useremail = all_clean_data['useremail']
+    verifymail = all_clean_data['verimail']
+
+    if useremail != verifymail:
+        raise forms.ValidationError("MAKE SURE EMAILS MATCH!")
+    return
+
+
+"""
+------------------------model to form - --------------------------
+In forms
+"""
+from django import forms
+from users.models import User
+from django.core import validators
+
+
+class NewUser(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = '__all__'
+
+
+# in views
+
+
+def registration(request):
+    form = NewUserForm()
+    if request.method == 'POST':
+        form = NewUserForm(request.POST)
+        if form.is_valid():
+            form.save(commit=True)
+            return home(request)
+        else:
+            print("error form invalid")
+
+    return render(request, 'registration.html', {'form': form})
+"""
+to style forms
+pip install django-crispy-forms
+in settings.py add crispy_forms to INSTALLED APPS array
+make sure you have bootstrap 
+to be contd.
+"""
+"""--------------------------templates relative urls--------------------------------------"""
+#go to app urls.py and add
+app_name = 'yourappname'
+'''in template add a tag like    <a href="{% url 'appname:viewname' %}">hey you</a>
+special case     <a href="{% url 'admin:index' %}">hey you</a>'''
+"""--------------------------templates inheritance--------------------------------------"""
+"""create a base template which will be repeatable in most of your templates
+write the repeatable code block
+create a div to contain a variable code between another templates 
+inside it create 
+{% block your_block_name %}
+
+{% end_block %}
+
+in another children templates write 
+{% extends "template/path" %}
+
+inside it 
+{% block your_block_name%}
+
+write variable code here
+
+{% endblock %}
+
+"""
+"""------------------------Django templates filters-----------------------"""
+#to apply filters on your templates variables inside templates
+#{{ variable | filter}}
+#you can look up for filters in https://docs.djangoproject.com/en/3.0/ref/templates/builtins/#ref-templates-builtins-filters
+#you can create your own filter by create new py file inside app and
+from django import template
+
+register = template.Library()
+
+# and define your filter as a method like cut
+# and register your filter
+register.filter('cut', cut)
+#there is another way to reg your filter
+@register.filter(name='cut')
+
+"""------------------------passwords-----------------------"""
+#make sure your settings.py file in installed apps list contains
+ 'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    if django 1.1 or above it will be already contained
+    and
+    commands
+    pip install bcrypt
+    pip install django[argon2]
+    and in settings.py
+    add
+  PASSWORD_HASHERS = ['django.contrib.auth.hashers.PBKDF2PasswordHasher',
+                    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+                    'django.contrib.auth.hashers.BCryptPasswordHasher',
+                    'django.contrib.auth.hashers.PBKDF2SHA256PasswordHasher',
+                    'django.contrib.auth.hashers.Argon2PasswordHasher',
+
+                    ]
+------------------------media dir------------------------
+in settings.py
+MEDIA_DIR = os.path.join(BASE_DIR, "media")
+MEDIA_ROOT = MEDIA_DIR
+MEDIA_URL = '/media/'
+to deal with images we need to install
+pip install pillow
+"""------------------------user model-----------------------"""
+in models.py
+from django.contrib.auth.models import User
+
+create a new model
+to link it to User model to add extra user info
+
+class UserProfileInfo(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    profile_site = models.URLField(blank=True)
+    profile_pic = models.ImageField(upload_to='profile_pics', blank=True)
+    ucountry = models.CharField(max_length=256, blank=False)
+    ucity = models.CharField(max_length=256, blank=False)
+    ustreetAddress = models.CharField(max_length=256, blank=False)
+    umembership = models.CharField(max_length=225, blank=False)
+
+    def __str__(self):
+        return self.user.username
+
+
+in forms.py we need to
+from django.contrib.auth.models import User

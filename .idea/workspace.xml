@@ -2,10 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71d81d63-c5ac-4f35-8e46-7fceec436147" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/User_Wlist.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docs/django.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/style.uni-form.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/uni-form.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/uni-form-validation.jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/uni-form.jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/validators.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/usershome.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0004_auto_20200206_0740.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Creatly.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Creatly.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Creatly/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Creatly/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Creatly/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Creatly/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docs/readme to deploy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/readme to deploy.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -168,7 +184,7 @@
       <workItem from="1580775278608" duration="17025000" />
       <workItem from="1580913288262" duration="2163000" />
       <workItem from="1580917776875" duration="316000" />
-      <workItem from="1580918120425" duration="15176000" />
+      <workItem from="1580918120425" duration="16047000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1580947548759</created>
