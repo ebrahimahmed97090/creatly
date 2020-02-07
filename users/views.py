@@ -1,8 +1,12 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from users.models import User
 # from . import forms
 from users.forms import NewUserForm, NewUserInfoForm
+
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth import authenticate, login, logout
+from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -24,9 +28,7 @@ def about(request):
 
 
 def home(request):
-    users_list = User.objects.order_by('uid')
-    users_dict = {'access_records': users_list}
-    return render(request, 'home.html', context=users_dict)
+    return render(request, 'home.html')
 
 
 def services(request):
@@ -61,21 +63,59 @@ def registration(request):
         userform = NewUserForm()
         userinfo = NewUserInfoForm()
 
-    return render(request, 'registration.html', {'userform': userform, 'userinfo': userinfo, 'registered':registered})
+    return render(request, 'registration.html', {'userform': userform, 'userinfo': userinfo, 'registered': registered})
 
 
 def example(request):
     my_dict = {'insert_me': "Hello I am from views.py"}
     return render(request, 'examples.html', context=my_dict)
 
-def example(request):
-    my_dict = {'insert_me': "Hello I am from views.py"}
-    return render(request, 'examples.html', context=my_dict)
 
+@login_required
 def UWl(request):
     my_dict = {'insert_me': "Hello I am from views.py"}
     return render(request, 'User_Wlist.html', context=my_dict)
 
+
 def usershome(request):
     my_dict = {'insert_me': "Hello I am from views.py"}
     return render(request, 'usershome.html', context=my_dict)
+
+
+def user_login(request):
+    if request.method == 'POST':
+        # First get the username and password supplied
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        # Django's built-in authentication function:
+        user = authenticate(username=username, password=password)
+
+        # If we have a user
+        if user:
+            # Check it the account is active
+            if user.is_active:
+                # Log the user in.
+                login(request, user)
+                # Send the user back to some page.
+                # In this case their homepage.
+                return HttpResponseRedirect(reverse('home'))
+            else:
+                # If account is not active:
+                return HttpResponse("Your account is not active.")
+        else:
+            print("Someone tried to login and failed.")
+            print("They used username: {} and password: {}".format(username, password))
+            return HttpResponse("Invalid login details supplied.")
+
+    else:
+        # Nothing has been provided for username or password.
+        return render(request, 'userlogin.html', {})
+
+
+@login_required
+def user_logout(request):
+    # Log out the user.
+    logout(request)
+    # Return to homepage.
+    return HttpResponseRedirect(reverse('home'))
