@@ -2,7 +2,10 @@
 {% load staticfiles %}
 {% block content %}
 
-
+ <div class="row">
+        <div class="col-8" >
+            <div class="border">
+            <h2>Created Websites</h2>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -19,21 +22,32 @@
       <td>455556</td>
       <td>123584</td>
       <td>0.25</td>
-      <button onclick="remove_update(event)">Remove</button>
+        <td>{{Add_opt|safe|escape}}</td>
+
+
+
     </tr>
     <tr>
       <th scope="row">Web2</th>
       <td>4556548</td>
       <td>454645</td>
       <td>445588</td>
+        <td>{{Add_opt|safe|escape}}</td>
     </tr>
     <tr>
       <th scope="row">Web3</th>
       <td>444788</td>
       <td>455456</td>
       <td>4455</td>
+        <td>{{Add_opt|safe|escape}}</td>
     </tr>
   </tbody>
 </table>
+            </div></div>
+ <div class="col-4">
+    <button type="button" class="btn btn-primary btn-lg">Add new Website</button>
+
+ </div>
+ </div>
 
 {% endblock %}

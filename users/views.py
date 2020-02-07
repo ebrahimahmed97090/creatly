@@ -73,9 +73,13 @@ def example(request):
     return render(request, 'examples.html', context=my_dict)
 
 def UWl(request):
-    my_dict = {'insert_me': "Hello I am from views.py"}
+    my_dict = {'Add_opt': '<span class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-ellipsis-v"></i></span><div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item" href="#">Up</a><a class="dropdown-item" href="#">Down</a><a class="dropdown-item" href="#">Remove</a></div>'}
     return render(request, 'User_Wlist.html', context=my_dict)
 
 def usershome(request):
     my_dict = {'insert_me': "Hello I am from views.py"}
     return render(request, 'usershome.html', context=my_dict)
+
+def tmps(request):
+    my_dict = {'insert_me': "Hello I am from views.py"}
+    return render(request, 'Template_store.html', context=my_dict)
