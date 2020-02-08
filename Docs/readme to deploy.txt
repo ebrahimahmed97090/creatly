@@ -16,7 +16,7 @@ check your envs list by:conda env list
 if Creatly already created activate it by: conda activate Creatly
 create Creatly env: conda create --name Creatly django
 conda activate Creatly
-to run server: python manage.py run server
+to run server: python manage.py runserver
 
 urls list 
 http://127.0.0.1:8000/
