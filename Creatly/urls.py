@@ -27,9 +27,11 @@ urlpatterns = [
     url(r'^about/', views.about, name='about'),
     url(r'^service/', views.services, name='services'),
     url(r'^reg/', views.registration, name='reg'),
+    url(r'^user_login/', views.user_login, name='user_login'),
     url(r'^example/', views.example, name='example'),
     url(r'^Uwl/', views.UWl, name='User_Wlist'),
     url(r'^users/', include('users.urls')),
-    url(r'^Tmps/', views.tmps, name='Template_store')
+    url(r'^Tmps/', views.tmps, name='Template_store'),
+    url(r'^logout/', include('users.urls')),
 
 ]

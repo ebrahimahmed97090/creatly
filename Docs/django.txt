@@ -402,19 +402,15 @@ register.filter('cut', cut)
                     'django.contrib.auth.hashers.Argon2PasswordHasher',
 
                     ]
-------------------------media dir------------------------
-in settings.py
-MEDIA_DIR = os.path.join(BASE_DIR, "media")
-MEDIA_ROOT = MEDIA_DIR
-MEDIA_URL = '/media/'
-to deal with images we need to install
-pip install pillow
-"""------------------------user model-----------------------"""
+"""------------------------user model(reg)-----------------------"""
+user model is a built in model has username email password first name surname
+the user can be -_activeuser _staffuser _superuser to create it
+
 in models.py
+
 from django.contrib.auth.models import User
 
-create a new model
-to link it to User model to add extra user info
+create a new model to link it to User model to add extra user info
 
 class UserProfileInfo(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -431,3 +427,93 @@ class UserProfileInfo(models.Model):
 
 in forms.py we need to
 from django.contrib.auth.models import User
+
+from users.models import UserProfileInfo
+from django.core import validators
+
+
+class NewUserForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput())
+
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name', 'email', 'password')
+
+
+class NewUserInfoForm(forms.ModelForm):
+    profile_site = forms.URLField(blank=True)
+    profile_pic = forms.ImageField(upload_to='profile_pics')
+
+    class Meta:
+        model = UserProfileInfo
+        fields = ('profile_site', 'profile_pic', 'ucountry', 'ucity', 'ustreetAddress', 'umembership')
+
+
+in views.py
+def registration(request):
+    registered = False
+    if request.method == "POST":
+        userform = NewUserForm(data=request.POST)
+        userinfo = NewUserInfoForm(data=request.POST)
+
+        if userform.is_valid() and userinfo.is_valid():
+            user = userform.save()
+            user.set_password(user.password)
+            user.save()
+
+            profile = userinfo.save(commit=False)
+            profile.user = user
+            if 'profile_pic' in request.FILES:
+                profile.profile_pic = request.FILES['profile_pic']
+
+            profile.save()
+
+            registered = True
+
+        else:
+            print(userform.errors, userinfo.errors)
+
+    else:
+        userform = NewUserForm()
+        userinfo = NewUserInfoForm()
+
+    return render(request, 'registration.html', {'userform': userform, 'userinfo': userinfo, 'registered': registered})
+
+
+in template
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+    Registration
+{% endblock %}
+
+{% load staticfiles %}
+{% block content %}
+    <!-- write html here -->
+    {% if registered %}
+        <h1>thank you for registering</h1>
+    {% else %}
+
+        <form enctype="multipart/form-data" method="post" class="uniForm">
+            {{ userform | crispy }}
+            {{ userinfo | crispy }}
+
+
+            {% csrf_token %}
+            <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+
+    {% endif %}
+
+
+{% endblock %}
+
+------------------------media dir------------------------
+in settings.py
+MEDIA_DIR = os.path.join(BASE_DIR, "media")
+MEDIA_ROOT = MEDIA_DIR
+MEDIA_URL = '/media/'
+-------------------------images-------------------------------
+to deal with images we need to install
+pip install pillow
+------------------------sign-in--------------------------------

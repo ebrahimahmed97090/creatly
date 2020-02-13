@@ -3,11 +3,10 @@ from django.contrib.auth.models import User
 from django_countries.fields import CountryField
 
 
-
 # Create your models here.
 class UserProfileInfo(models.Model):
     MEMBER_CHOICES = (('free', 'Free'), ('minimal', 'Minimal'), ('premium', 'Premium'))
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, primary_key=True, on_delete=models.CASCADE)
     profile_site = models.URLField(blank=True)
     profile_pic = models.ImageField(upload_to='profile_pics', blank=True)
     ucountry = CountryField()
@@ -20,14 +19,17 @@ class UserProfileInfo(models.Model):
 
 
 class PaymentMethods(models.Model):
-    paymethod = models.CharField(max_length=200, blank=True)
+    PAYMENT_CHOICES = [('FAW', 'fawry'), ('VFC', 'vodafone cash'), ('CC', 'Credit card'), ('C', 'Cash')]
+    userp = models.ForeignKey(User, on_delete=models.CASCADE)
+    pmthid = models.AutoField(primary_key=True)
+    paymethod = models.CharField(max_length=200, choices=PAYMENT_CHOICES)
 
 
 class WebSites(models.Model):
+    userw = models.ForeignKey(User, on_delete=models.CASCADE)
     wid = models.AutoField(primary_key=True)
     wname = models.CharField(max_length=255, blank=False)
     wpath = models.CharField(max_length=255)
-    USERSITE = models.ForeignKey(User, on_delete=models.PROTECT)
 
 
 class WebsiteOptions(models.Model):
