@@ -315,12 +315,168 @@ body {
     text-align: center;
 }
 
-.ab-container{
+.ab-container {
     margin: 2%;
     text-align: center;
 }
+
 /*-------------------------------------------------------*/
 
 /*price-plans--------------------------------------------*/
 
 /*-------------------------------------------------------*/
+
+/*pages builder*/
+.compon {
+    background-color: #3699fb;
+    color: white;
+    height: 100vh;
+    overflow-x: scroll;
+
+}
+.compon::-webkit-scrollbar {
+  width: 6px;
+}
+.compon::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.compon::-webkit-scrollbar-thumb {
+
+    border-radius: 25px;
+    background-color: deepskyblue;
+}
+
+.cnt {
+    min-height: 100vh;
+}
+.dragitms{
+    height: 95px;
+    width: 109px;
+}
+.dragitms div {
+
+    height: 70px;
+    margin: 0 5px;
+    background-size: 100%;
+
+}
+
+.dragitms p {
+
+    text-align: center
+}
+
+.banner {
+    background-image: url("../images/pagebuilder/Banner.png");
+}
+
+.covers {
+    background-image: url("../images/pagebuilder/cover.png");
+}
+
+.image-text {
+    background-image: url("../images/pagebuilder/image text.png");
+}
+
+.text-image {
+    background-image: url("../images/pagebuilder/text image.png");
+}
+
+.titles {
+    background-image: url("../images/pagebuilder/text.png");
+}
+
+.text-block {
+    background-image: url("../images/pagebuilder/text block.png");
+}
+
+.pic {
+    background-image: url("../images/pagebuilder/picture.png");
+}
+
+.slider {
+    background-image: url("../images/pagebuilder/slider.png");
+}
+
+.features {
+    background-image: url("../images/pagebuilder/features.png");
+}
+
+.cols {
+    background-image: url("../images/pagebuilder/cols.png");
+}
+
+.pageheader {
+    background-image: url("../images/pagebuilder/page header.png");
+}
+
+.nuamberssy {
+    background-image: url("../images/pagebuilder/numbers.png");
+}
+
+.steps {
+    background-image: url("../images/pagebuilder/steps.png");
+}
+
+.tprofiles {
+    background-image: url("../images/pagebuilder/team profiles.png");
+}
+
+.imagesrow {
+    background-image: url("../images/pagebuilder/images row.png");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

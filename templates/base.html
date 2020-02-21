@@ -6,11 +6,13 @@
     <title> {% block title %}
 
 
-    {% endblock %}</title>
+        {% endblock %}</title>
     <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'fontawesome-pro-5.11.2-web/css/all.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/buildertools.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.uni-form.css' %}">
     <link rel="stylesheet" href="{% static 'css/uni-form.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -25,88 +27,88 @@
 {#H: Update background color for navbar #}
 <!--don't use inline styling because it will override any styling to this element in the future external file is preferred the problem in nav background color were that nav has taken bg-light class that gives it a background -->
 {% if user.is_authenticated %}
-    <nav class="navbar navbar-expand-lg navbar-light  nav-bar-style">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
-                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        {#H: Update background color for navbar, Add main bottons from design #}
-        <div class="collapse navbar-collapse nav-nav" id="navbarTogglerDemo01">
-            <a class="navbar-brand navbar-brand-home-style" href="#">Creatly</a>
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'home' %}">PROFILE<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'about' %}">WEBSITES<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'services' %}">CHANGE PLAN<span
-                            class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'example' %}">CREDIT<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'contact' %}">QUOTA<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'users:log_out' %}">LOGOUT<span
-                            class="sr-only">(current)</span></a>
-                </li>
+<nav class="navbar navbar-expand-lg navbar-light  nav-bar-style">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    {#H: Update background color for navbar, Add main bottons from design #}
+    <div class="collapse navbar-collapse nav-nav" id="navbarTogglerDemo01">
+        <a class="navbar-brand navbar-brand-home-style" href="#">Creatly</a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'home' %}">PROFILE<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'about' %}">WEBSITES<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'services' %}">CHANGE PLAN<span
+                        class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'example' %}">CREDIT<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'contact' %}">QUOTA<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'users:log_out' %}">LOGOUT<span
+                        class="sr-only">(current)</span></a>
+            </li>
 
 
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
 {% else %}
 
-    <nav class="navbar navbar-expand-lg navbar-light  nav-bar-style">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
-                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        {#H: Update background color for navbar, Add main bottons from design #}
-        <div class="collapse navbar-collapse nav-nav" id="navbarTogglerDemo01">
-            <a class="navbar-brand navbar-brand-home-style" href="#">Creatly</a>
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'home' %}">HOME<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'about' %}">ABOUT<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'services' %}">SERVICES<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'example' %}">EXAMPLES<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'contact' %}">CONTACT<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'reg' %}">JOIN US<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'prices' %}">PRICE PLANS<span class="sr-only">(current)</span></a>
-                </li>
+<nav class="navbar navbar-expand-lg navbar-light  nav-bar-style">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    {#H: Update background color for navbar, Add main bottons from design #}
+    <div class="collapse navbar-collapse nav-nav" id="navbarTogglerDemo01">
+        <a class="navbar-brand navbar-brand-home-style" href="#">Creatly</a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'home' %}">HOME<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'about' %}">ABOUT<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'services' %}">SERVICES<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'example' %}">EXAMPLES<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'contact' %}">CONTACT<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'reg' %}">JOIN US<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'prices' %}">PRICE PLANS<span class="sr-only">(current)</span></a>
+            </li>
 
 
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
 {% endif %}
 
-<div class="wrapper">
+<div>
     {% block content %}
 
     {% endblock %}
@@ -123,7 +125,7 @@
             <p>© 2020 BS3 UI Kit, All rights reserved</p>
         </div>
         <div class="col-md-3 footer-nav animated fadeInUp">
-            {#            <h4>Menu —</h4>#}
+            {# <h4>Menu —</h4>#}
             <div class="col-md-6">
                 <ul class="pages">
                     <li><a href="#">HOME</a></li>
@@ -170,6 +172,7 @@
 
 <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
 <script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/jquery-ui.min.js' %}"></script>
 <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 <script src="{% static 'fontawesome-pro-5.11.2-web/js/all.min.js' %}"></script>
 <script src="{% static 'js/app.js' %}"></script>

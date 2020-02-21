@@ -73,7 +73,8 @@ def example(request):
 
 @login_required
 def UWl(request):
-    my_dict = {'Add_opt': '<span class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-ellipsis-v"></i></span><div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item" href="#">Up</a><a class="dropdown-item" href="#">Down</a><a class="dropdown-item" href="#">Remove</a></div>'}
+    my_dict = {
+        'Add_opt': '<span class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-ellipsis-v"></i></span><div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#">Edit</a><a class="dropdown-item" href="#">Up</a><a class="dropdown-item" href="#">Down</a><a class="dropdown-item" href="#">Remove</a></div>'}
     return render(request, 'User_Wlist.html', context=my_dict)
 
 
@@ -119,6 +120,13 @@ def user_logout(request):
     logout(request)
     # Return to homepage.
     return HttpResponseRedirect(reverse('home'))
+
+
+@login_required
+def pagebuilder(request):
+    return render(request, 'pagebuilder.html', {})
+
+
 def tmps(request):
     my_dict = {'insert_me': "Hello I am from views.py"}
     return render(request, 'Template_store.html', context=my_dict)
